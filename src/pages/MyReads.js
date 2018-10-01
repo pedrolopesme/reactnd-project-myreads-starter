@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ShelvesComponent from '../components/ShelvesComponent.js';
+import { Link } from 'react-router-dom'
 
 class MyReads extends Component {
     render() {
@@ -12,7 +13,7 @@ class MyReads extends Component {
                     <ShelvesComponent />
                 </div>
                 <div className="open-search">
-                    <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+                    <Link to="/create">Add a book</Link>
                 </div>
             </div>
         )

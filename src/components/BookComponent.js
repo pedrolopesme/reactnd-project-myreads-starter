@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 class BookComponent extends Component {
 
+    // TODO name fields according to json response
     constructor(props) {
         super(props);
         this.state = {

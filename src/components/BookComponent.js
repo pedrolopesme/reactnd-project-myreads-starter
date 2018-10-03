@@ -1,24 +1,19 @@
 import React, { Component } from 'react'
 
 class BookComponent extends Component {
-
-    // TODO name fields according to json response
     constructor(props) {
         super(props);
         this.state = {
-            title: props.book.title,
-            authors: props.book.authors,
-            image: props.book.image,
-            height: props.book.height,
-            with: props.book.with
+            ...props.book
         }
     }
 
     render() {
-        const style = { 
-            width: this.state.with, 
-            height: this.state.height,
-            backgroundImage: 'url("' + this.state.image + '")' }
+        const style = {
+            width: 128,
+            height: 188,
+            backgroundImage: 'url("' + this.state.imageLinks.thumbnail + '")'
+        }
 
         return (
             <div className="book">
@@ -35,7 +30,7 @@ class BookComponent extends Component {
                     </div>
                 </div>
                 <div className="book-title">{this.state.title}</div>
-                <div className="book-authors">{this.state.authors}</div>
+                <div className="book-authors">{this.state.authors !== undefined && (this.state.authors.join(", "))}</div>
             </div>
         )
     }

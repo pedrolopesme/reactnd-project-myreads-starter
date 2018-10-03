@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import * as BooksAPI from '../integration/BooksAPI.js'
 
 class BookComponent extends Component {
     constructor(props) {
@@ -6,6 +7,13 @@ class BookComponent extends Component {
         this.state = {
             ...props.book
         }
+    }
+
+    updateShelf = (evnt) => {
+        BooksAPI.update(this.state, evnt.target.value)
+            .then(result => {
+                console.log(result);
+            });
     }
 
     render() {
@@ -20,7 +28,7 @@ class BookComponent extends Component {
                 <div className="book-top">
                     <div className="book-cover" style={style}></div>
                     <div className="book-shelf-changer">
-                        <select>
+                        <select onChange={this.updateShelf}>
                             <option value="move" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>

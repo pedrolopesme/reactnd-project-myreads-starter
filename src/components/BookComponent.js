@@ -30,7 +30,9 @@ class BookComponent extends Component {
                 <div className="book-top">
                     <div className="book-cover" style={style}></div>
                     <div className="book-shelf-changer">
-                        <select onChange={this.updateShelf}>
+                        <select 
+                            onChange={this.updateShelf} 
+                            value={this.state.book.shelf === undefined ? "none" : this.state.book.shelf }>
                             <option value="move" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>

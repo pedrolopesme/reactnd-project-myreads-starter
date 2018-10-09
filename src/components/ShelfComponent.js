@@ -8,6 +8,7 @@ class ShelfComponent extends Component {
             title: props.title,
             shelf: props.shelf,
             getBooks: props.getBooks,
+            updateShelves: props.updateShelves
         }
     }
 
@@ -18,7 +19,7 @@ class ShelfComponent extends Component {
                 <div className="bookshelf-books">
                     <ol className="books-grid">
                         {this.state.getBooks(this.state.shelf).map(book =>
-                            <li key={book.id}><BookComponent book={book} /> </li>
+                            <li key={book.id}><BookComponent book={book} updateShelves={this.state.updateShelves} /> </li>
                         )}
                     </ol>
                 </div>

@@ -5,14 +5,16 @@ class BookComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ...props.book
+            book: { ...props.book },
+            updateShelves: props.updateShelves
         }
     }
 
     updateShelf = (evnt) => {
-        BooksAPI.update(this.state, evnt.target.value)
+        BooksAPI.update(this.state.book, evnt.target.value)
             .then(result => {
-                console.log(result);
+                if(this.state.updateShelves)
+                    this.state.updateShelves()
             });
     }
 
@@ -20,7 +22,7 @@ class BookComponent extends Component {
         const style = {
             width: 128,
             height: 188,
-            backgroundImage: 'url("' + this.state.imageLinks.thumbnail + '")'
+            backgroundImage: 'url("' + this.state.book.imageLinks.thumbnail + '")'
         }
 
         return (
@@ -37,8 +39,8 @@ class BookComponent extends Component {
                         </select>
                     </div>
                 </div>
-                <div className="book-title">{this.state.title}</div>
-                <div className="book-authors">{this.state.authors !== undefined && (this.state.authors.join(", "))}</div>
+                <div className="book-title">{this.state.book.title}</div>
+                <div className="book-authors">{this.state.book.authors !== undefined && (this.state.book.authors.join(", "))}</div>
             </div>
         )
     }

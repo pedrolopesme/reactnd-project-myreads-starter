@@ -11,22 +11,30 @@ class ShelvesComponent extends Component {
     }
 
     componentDidMount = () => {
+        this.loadBooks();
+    }
+
+    loadBooks = () => {
         BooksAPI.getAll()
-            .then(books => {
-                this.setState({ books: books });
-            })
+        .then(books => {
+            this.setState({ books: books });
+        })
     }
 
     getBooks = (shelf) => {
         return this.state.books.filter(book => book.shelf === shelf);
     }
 
+    updateShelves = () => {
+        this.loadBooks();
+    }
+
     render() {
         return (
             <div>
-                <ShelfComponent title="Currently Reading" shelf="currentlyReading" getBooks={this.getBooks} />
-                <ShelfComponent title="Want to Read" shelf="wantToRead" getBooks={this.getBooks} />
-                <ShelfComponent title="Read" shelf="read" getBooks={this.getBooks} />
+                <ShelfComponent title="Currently Reading" shelf="currentlyReading" getBooks={this.getBooks} updateShelves={this.updateShelves} />
+                <ShelfComponent title="Want to Read" shelf="wantToRead" getBooks={this.getBooks} updateShelves={this.updateShelves} />
+                <ShelfComponent title="Read" shelf="read" getBooks={this.getBooks} updateShelves={this.updateShelves} />
             </div>
         )
     }

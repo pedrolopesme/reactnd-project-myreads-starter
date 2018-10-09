@@ -13,17 +13,20 @@ class ShelvesComponent extends Component {
     componentDidMount = () => {
         BooksAPI.getAll()
             .then(books => {
-                console.log(books)
                 this.setState({ books: books });
             })
+    }
+
+    getBooks = (shelf) => {
+        return this.state.books.filter(book => book.shelf === shelf);
     }
 
     render() {
         return (
             <div>
-                <ShelfComponent title="Currently Reading" books={this.state.books.filter(book => book.shelf === "currentlyReading" )} />
-                <ShelfComponent title="Want to Read" books={this.state.books.filter(book => book.shelf === "wantToRead" )} />
-                <ShelfComponent title="Read" books={this.state.books.filter(book => book.shelf === "read" )} />
+                <ShelfComponent title="Currently Reading" shelf="currentReading" getBooks={this.getBooks} />
+                <ShelfComponent title="Want to Read" shelf="wantToRead" getBooks={this.getBooks} />
+                <ShelfComponent title="Read" shelf="read" getBooks={this.getBooks} />
             </div>
         )
     }

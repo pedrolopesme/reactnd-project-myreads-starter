@@ -5,8 +5,9 @@ class ShelfComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: this.props.title,
-            books: this.props.books
+            title: props.title,
+            shelf: props.shelf,
+            getBooks: props.getBooks,
         }
     }
 
@@ -17,7 +18,7 @@ class ShelfComponent extends Component {
                 <div className="bookshelf-books">
                     <ol className="books-grid">
                         <li>
-                            {this.state.books !== undefined && this.state.books.map(book =>
+                            {this.state.getBooks(this.state.shelf).map(book =>
                                 <BookComponent book={book} />
                             )}
                         </li>

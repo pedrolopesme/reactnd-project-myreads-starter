@@ -24,7 +24,7 @@ class ShelvesComponent extends Component {
     render() {
         return (
             <div>
-                <ShelfComponent title="Currently Reading" shelf="currentReading" getBooks={this.getBooks} />
+                <ShelfComponent title="Currently Reading" shelf="currentlyReading" getBooks={this.getBooks} />
                 <ShelfComponent title="Want to Read" shelf="wantToRead" getBooks={this.getBooks} />
                 <ShelfComponent title="Read" shelf="read" getBooks={this.getBooks} />
             </div>

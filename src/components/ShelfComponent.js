@@ -17,11 +17,9 @@ class ShelfComponent extends Component {
                 <h2 className="bookshelf-title">{this.state.title}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        <li>
-                            {this.state.getBooks(this.state.shelf).map(book =>
-                                <BookComponent book={book} />
-                            )}
-                        </li>
+                        {this.state.getBooks(this.state.shelf).map(book =>
+                            <li key={book.id}><BookComponent book={book} /> </li>
+                        )}
                     </ol>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import BooksApp from './App'
+import {shallow} from './enzyme'
 
 /** 
  This course is not designed to teach Test Driven Development. 
@@ -8,9 +9,14 @@ import App from './App'
  is not required.
 **/
 
-it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<App />, div)
-})
+describe('App', () => {
+  const app = shallow(<BooksApp />);
+
+  it('renders without crashing', () => {
+    // const div = document.createElement('div')
+    // ReactDOM.render(<BooksApp />, div)
+    expect(app).toMatchSnapshot();
+  })
+})  
 
 

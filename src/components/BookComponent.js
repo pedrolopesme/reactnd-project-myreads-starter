@@ -13,9 +13,12 @@ class BookComponent extends Component {
     updateShelf = (evnt) => {
         BooksAPI.update(this.state.book, evnt.target.value)
             .then(result => {
-                if(this.state.updateShelves)
-                    this.state.updateShelves()
+                this.state.updateShelves()
             });
+    }
+
+    calculateSelectShelf = () => {
+        return this.state.book.shelf === undefined ? "none" : this.state.book.shelf;
     }
 
     render() {
@@ -32,7 +35,8 @@ class BookComponent extends Component {
                     <div className="book-shelf-changer">
                         <select 
                             onChange={this.updateShelf} 
-                            value={this.state.book.shelf === undefined ? "none" : this.state.book.shelf }>
+                            value={this.calculateSelectShelf()}
+                            className="move-to-shelf">
                             <option value="move" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>

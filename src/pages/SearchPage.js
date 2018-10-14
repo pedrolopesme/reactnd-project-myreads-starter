@@ -4,30 +4,26 @@ import * as BooksAPI from '../integration/BooksAPI.js'
 import BookComponent from '../components/BookComponent.js'
 
 class SearchPage extends Component {
-
     constructor(props) {
         super(props);
-        this.state=  {
+        this.state = {
             term: "",
             books: []
         }
     }
 
-    // TODO refactor
-    seachTerm = (evt) => {
+    handleChange = (evt) => {
         this.setState({
-            term: evt.target.value 
+            term: evt.target.value
         })
+        this.seachTerm();
+    };
 
+    seachTerm = () => {
         BooksAPI.search(this.state.term)
-        .then((results) => {
-            if(results !== undefined) {
+            .then((results) => {
                 this.setState({ books: results })
-            }
-        });
-    }
-
-    componentDidMount = () => {
+            });
     }
 
     render() {
@@ -36,18 +32,18 @@ class SearchPage extends Component {
                 <div className="search-books-bar">
                     <Link className="close-search" to="/">Close</Link>
                     <div className="search-books-input-wrapper">
-                        <input type="text" placeholder="Search by title or author"  value={this.state.term} onChange={this.seachTerm} />
+                        <input className="search-term" type="text" placeholder="Search by title or author" value={this.state.term} onChange={this.seachTerm} />
                     </div>
                 </div>
                 <div className="search-books-results">
-                    { this.state.term !== "" && (
-                        <span> Found {this.state.books.length} book results for <i>"{this.state.term}"</i> : </span> 
+                    {this.state.term !== "" && (
+                        <span className="searched-term"> Found {this.state.books.length} book results for <i>"{this.state.term}"</i> : </span>
                     )}
 
                     <ol className="books-grid">
-                    { this.state.books.length > 0 && this.state.books.map( (book) =>
-                        <li key={book.id}> <BookComponent book={book} /> </li> 
-                    )}
+                        {this.state.books.length > 0 && this.state.books.map((book) =>
+                            <li key={book.id}> <BookComponent book={book} /> </li>
+                        )}
                     </ol>
                 </div>
             </div>

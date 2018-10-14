@@ -13,10 +13,6 @@ describe('ShelvesComponent', () => {
         fetch.mockResponseOnce(JSON.stringify({ data: httpResponse }))
     });
 
-    it('renders properly', () => {
-        expect(wrapper).toMatchSnapshot();
-    });
-
     it('contains an wrapper div', () => {
         expect(wrapper.find('.shelves').exists()).toBe(true);
     });

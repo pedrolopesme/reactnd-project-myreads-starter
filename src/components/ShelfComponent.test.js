@@ -17,10 +17,6 @@ describe('ShelfComponent', () => {
         fetch.mockResponseOnce(JSON.stringify({ data: '12345' }))
     });
 
-    it('renders properly', () => {
-        expect(shelfComponent).toMatchSnapshot();
-    });
-
     describe('initializes the `state`', () => {
         it('with title passed via props', () => {
             expect(shelfComponent.state().title).toEqual(props.title);

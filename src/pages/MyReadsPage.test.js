@@ -10,10 +10,6 @@ describe('MyReadsPage', () => {
         fetch.resetMocks();
     });
 
-    it('renders properly', () => {
-        expect(wrapper).toMatchSnapshot();
-    });
-
     describe('when rendered', () => {
         it('shows page title', () => {
             expect(wrapper.find('.list-books-title').exists()).toBe(true);

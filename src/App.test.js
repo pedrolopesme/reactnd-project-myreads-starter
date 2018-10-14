@@ -5,7 +5,7 @@ import {shallow} from './enzyme'
 describe('App', () => {
   const app = shallow(<BooksApp />);
   it('renders without crashing', () => {
-    expect(app).toMatchSnapshot();
+    expect(app.find('.app').exists()).toBe(true);
   })
 })  
 

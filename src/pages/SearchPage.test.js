@@ -10,10 +10,6 @@ describe('SearchPage', () => {
         fetch.resetMocks();
     });
 
-    it('renders properly', () => {
-        expect(wrapper).toMatchSnapshot();
-    });
-
     describe('initializes the `state`', () => {
         it('with empty term', () => {
             expect(wrapper.state().term).toEqual("");

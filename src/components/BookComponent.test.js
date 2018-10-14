@@ -12,10 +12,6 @@ describe('BookComponent', () => {
         fetch.resetMocks();
     });
 
-    it('renders properly', () => {
-        expect(bookComponent).toMatchSnapshot();
-    });
-
     describe('initializes the `state`', () => {
         it('with a book entry containing the book passed via props', () => {
             expect(bookComponent.state().book).toEqual(props.book);

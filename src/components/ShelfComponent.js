@@ -12,14 +12,19 @@ class ShelfComponent extends Component {
         }
     }
 
+    loadBooks = () => {
+        const books = this.state.getBooks(this.state.shelf);
+        return books || [];
+    }
+
     render() {
         return (
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{this.state.title}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        {this.state.getBooks(this.state.shelf).map(book =>
-                            <li key={book.id}><BookComponent book={book} updateShelves={this.state.updateShelves} /> </li>
+                        {this.loadBooks().map(book =>
+                            <li key={book.id} className="books-grid-element"><BookComponent book={book} updateShelves={this.state.updateShelves} /> </li>
                         )}
                     </ol>
                 </div>

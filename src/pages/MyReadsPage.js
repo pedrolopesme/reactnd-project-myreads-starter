@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ShelvesComponent from '../components/ShelvesComponent.js';
 import { Link } from 'react-router-dom'
 
-class MyReads extends Component {
+class MyReadsPage extends Component {
     render() {
         return (
             <div className="list-books">
@@ -20,4 +20,4 @@ class MyReads extends Component {
     }
 }
 
-export default MyReads;
+export default MyReadsPage;

@@ -19,5 +19,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  }, 
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "src/pages/**/*.js",
+      "src/tests/**/*.js",
+      "src/App*"
+    ]
   }
 }

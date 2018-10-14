@@ -6,7 +6,7 @@ import { Book1 } from '../tests/fixtures'
 describe('ShelvesComponent', () => {
     const books = [Book1];
     const wrapper = shallow(<ShelvesComponent />);
-    
+
     beforeEach(() => {
         const httpResponse = { books: books }
         fetch.resetMocks();
@@ -33,7 +33,6 @@ describe('ShelvesComponent', () => {
         });
     });
 
-    
     describe('updateShelves', () => {
         it('to load books', () => {
             const mockLoadBooks = jest.fn();

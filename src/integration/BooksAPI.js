@@ -14,13 +14,13 @@ const headers = {
 
 export const get = (bookId) =>
   fetch(`${api}/books/${bookId}`, { headers })
-    .then(res => res.json())
-    .then(data => data.book)
+    .then(res => res.text())
+    .then(data => data ? JSON.parse(data).book : {})
 
 export const getAll = () =>
   fetch(`${api}/books`, { headers })
-    .then(res => res.json())
-    .then(data => data.books)
+    .then(res => res.text())
+    .then(data => data ? JSON.parse(data).books : [])
 
 export const update = (book, shelf) =>
   fetch(`${api}/books/${book.id}`, {

@@ -6,7 +6,7 @@ class ShelvesComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            books: []
+            books: [],
         }
     }
 
@@ -16,9 +16,9 @@ class ShelvesComponent extends Component {
 
     loadBooks = () => {
         BooksAPI.getAll()
-        .then(books => {
-            this.setState({ books: books });
-        })
+            .then(receivedBooks => {
+                this.setState({books: receivedBooks});
+            });
     }
 
     getBooks = (shelf) => {
@@ -31,7 +31,7 @@ class ShelvesComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="shelves">
                 <ShelfComponent title="Currently Reading" shelf="currentlyReading" getBooks={this.getBooks} updateShelves={this.updateShelves} />
                 <ShelfComponent title="Want to Read" shelf="wantToRead" getBooks={this.getBooks} updateShelves={this.updateShelves} />
                 <ShelfComponent title="Read" shelf="read" getBooks={this.getBooks} updateShelves={this.updateShelves} />

@@ -27,19 +27,19 @@ describe('BookComponent', () => {
     });
 
     describe('when rendered', () => {
-        it('is renders the book cover', () => {
+        it('shows the book cover', () => {
             expect(bookComponent.find('.book-cover').exists()).toBe(true);
         });
 
-        it('is renders the book title', () => {
+        it('shows the book title', () => {
             expect(bookComponent.find('.book-title').exists()).toBe(true);
         });
 
-        it('is renders the book authors', () => {
+        it('shows the book authors', () => {
             expect(bookComponent.find('.book-authors').exists()).toBe(true);
         });
 
-        it('is renders the moveTo shelf selector', () => {
+        it('shows the moveTo shelf selector', () => {
             expect(bookComponent.find('.move-to-shelf').exists()).toBe(true);
         });
     });

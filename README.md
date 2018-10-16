@@ -1,13 +1,16 @@
 <h1 align="center"> 
-  <br />
-  MyReads Project
-  <br>
+     <br />
+   MyReads Project
+   <br />
+   <img src="https://github.com/pedrolopesme/reactnd-project-myreads-starter/blob/master/readme/app.png?raw=true" />
+   <br />
+   <div>
+       <a href="https://travis-ci.com/pedrolopesme/reactnd-project-myreads-starter"><img src="https://travis-ci.com/pedrolopesme/reactnd-project-myreads-starter.svg?branch=master" /></a>
+       <a href="https://codeclimate.com/github/pedrolopesme/reactnd-project-myreads-starter/maintainability"><img src="https://api.codeclimate.com/v1/badges/604a5d81300cb86b87ac/maintainability" /></a> <br />
+    </div>
 </h1>
 
 <h4 align="center">Udacity React Project</h4>
-
-[![Build Status](https://travis-ci.com/pedrolopesme/reactnd-project-myreads-starter.svg?branch=master)](https://travis-ci.com/pedrolopesme/reactnd-project-myreads-starter) [![Maintainability](https://api.codeclimate.com/v1/badges/604a5d81300cb86b87ac/maintainability)](https://codeclimate.com/github/pedrolopesme/reactnd-project-myreads-starter/maintainability)
-
 
 ### Running tests
 
@@ -22,6 +25,8 @@ To get current coverage status, just type:
 ```shell
 $ npm test -- --coverage
 ```
+
+![](https://github.com/pedrolopesme/reactnd-project-myreads-starter/blob/master/readme/testscoverage.png?raw=true)
 
 ### Added Libraries
 

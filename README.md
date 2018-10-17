@@ -16,6 +16,20 @@
 
 In the MyReads project, you'll create a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
 
+### Running the application 
+
+To install all project dependencies just type:
+
+```shell
+npm install
+```
+
+To start the development server just type:
+
+```shell
+npm start
+```
+
 ### Running tests
 
 Tests were write using [Jest](https://jestjs.io/) combined with [Enzyme](https://github.com/airbnb/enzyme). In order to run them, just type:

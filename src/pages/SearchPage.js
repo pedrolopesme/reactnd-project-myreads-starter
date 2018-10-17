@@ -32,7 +32,7 @@ class SearchPage extends Component {
                 <div className="search-books-bar">
                     <Link className="close-search" to="/">Close</Link>
                     <div className="search-books-input-wrapper">
-                        <input className="search-term" type="text" placeholder="Search by title or author" value={this.state.term} onChange={this.seachTerm} />
+                        <input className="search-term" type="text" placeholder="Search by title or author" value={this.state.term} onChange={this.handleChange} />
                     </div>
                 </div>
                 <div className="search-books-results">
@@ -42,7 +42,7 @@ class SearchPage extends Component {
 
                     <ol className="books-grid">
                         {this.state.books.length > 0 && this.state.books.map((book) =>
-                            <li key={book.id}> <BookComponent book={book} /> </li>
+                            <li key={book.id}> <BookComponent book={book} updateShelves={() => {}} /> </li>
                         )}
                     </ol>
                 </div>

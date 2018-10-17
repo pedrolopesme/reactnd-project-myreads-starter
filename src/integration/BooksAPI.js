@@ -41,4 +41,13 @@ export const search = (query) =>
     },
     body: JSON.stringify({ query })
   }).then(res => res.text())
-    .then(data => data ? JSON.parse(data).books : [])
+    .then(data => {
+      let result = []
+      if(data) {
+        let parsed = JSON.parse(data)
+        if(parsed.books){
+          result = parsed.books
+        }
+      }
+      return result
+    })

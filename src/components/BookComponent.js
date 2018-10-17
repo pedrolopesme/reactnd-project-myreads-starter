@@ -30,7 +30,7 @@ class BookComponent extends Component {
         return (
             <div className="book">
                 <div className="book-top">
-                    <img className="book-cover" src={this.state.book.imageLinks.thumbnail} />
+                    <img alt={this.state.book.title} className="book-cover" src={this.state.book.imageLinks.thumbnail} style={style} />
                     <div className="book-shelf-changer">
                         <select 
                             onChange={this.updateShelf} 

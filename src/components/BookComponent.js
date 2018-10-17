@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../integration/BooksAPI.js'
-import LazyLoad from 'react-lazyload';
+import LazyLoad from 'react-lazyload'
+import PropTypes from 'prop-types'
 
 class BookComponent extends Component {
     constructor(props) {
@@ -35,8 +36,8 @@ class BookComponent extends Component {
                         <img alt={this.state.book.title} className="book-cover" src={this.state.book.imageLinks.thumbnail} style={style} />
                     </LazyLoad>
                     <div className="book-shelf-changer">
-                        <select 
-                            onChange={this.updateShelf} 
+                        <select
+                            onChange={this.updateShelf}
                             value={this.calculateSelectShelf()}
                             className="move-to-shelf">
                             <option value="move" disabled>Move to...</option>
@@ -53,5 +54,10 @@ class BookComponent extends Component {
         )
     }
 }
+
+BookComponent.propTypes = {
+    book: PropTypes.object.isRequired,
+    updateShelves: PropTypes.func.isRequired
+};
 
 export default BookComponent;

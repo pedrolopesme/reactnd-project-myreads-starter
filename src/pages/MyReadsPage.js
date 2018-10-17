@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ShelvesComponent from '../components/ShelvesComponent.js';
+import ShelvesComponent from '../components/ShelvesComponent.js'
 import { Link } from 'react-router-dom'
 
 class MyReadsPage extends Component {

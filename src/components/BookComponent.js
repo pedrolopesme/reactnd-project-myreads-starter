@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../integration/BooksAPI.js'
+import LazyLoad from 'react-lazyload';
 
 class BookComponent extends Component {
     constructor(props) {
@@ -30,7 +31,9 @@ class BookComponent extends Component {
         return (
             <div className="book">
                 <div className="book-top">
-                    <img alt={this.state.book.title} className="book-cover" src={this.state.book.imageLinks.thumbnail} style={style} />
+                    <LazyLoad height={188} once >
+                        <img alt={this.state.book.title} className="book-cover" src={this.state.book.imageLinks.thumbnail} style={style} />
+                    </LazyLoad>
                     <div className="book-shelf-changer">
                         <select 
                             onChange={this.updateShelf} 

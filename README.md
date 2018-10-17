@@ -41,6 +41,7 @@ These are the main external packages added to the project:
 | **[Enzyme](https://github.com/airbnb/enzyme)** | **JavaScript Testing utilities for React.** |
 | **[Jest Fetch Mock](https://github.com/jefflau/jest-fetch-mock)** | **Jest mock for the fetch polyfill.** |
 | **[Jest Localstorage Mock](https://github.com/clarkbw/jest-localstorage-mock)** | **A module to mock window.localStorage and window.sessionStorage in Jest.** |
+| **[react-lazyload](https://github.com/jasonslyvia/react-lazyload)** | **Lazyload your Components, Images or anything matters the performance..** |
 | **[React Router DOM](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)** | **DOM bindings for React Router.** |
 
 ### Original Udacity's README

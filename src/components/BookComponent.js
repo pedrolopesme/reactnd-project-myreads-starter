@@ -23,15 +23,14 @@ class BookComponent extends Component {
 
     render() {
         const style = {
-            width: 128,
-            height: 188,
-            backgroundImage: 'url("' + this.state.book.imageLinks.thumbnail + '")'
+            maxWidth: 128,
+            maxHeight: 188
         }
 
         return (
             <div className="book">
                 <div className="book-top">
-                    <div className="book-cover" style={style}></div>
+                    <img className="book-cover" src={this.state.book.imageLinks.thumbnail} />
                     <div className="book-shelf-changer">
                         <select 
                             onChange={this.updateShelf} 

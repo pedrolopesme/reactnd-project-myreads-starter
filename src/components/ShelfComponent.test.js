@@ -56,7 +56,7 @@ describe('ShelfComponent', () => {
         });
 
         it('returns an empty arraywhen getBooks returns nothing', () => {
-            shelfComponent.setState({getBooks : jest.fn()});
+            shelfComponent.setState({ getBooks: jest.fn() });
             expect(shelfComponent.instance().loadBooks()).toEqual([]);
         });
     });

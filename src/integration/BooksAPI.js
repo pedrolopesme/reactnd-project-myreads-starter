@@ -43,9 +43,9 @@ export const search = (query) =>
   }).then(res => res.text())
     .then(data => {
       let result = []
-      if(data) {
+      if (data) {
         let parsed = JSON.parse(data)
-        if(parsed.books){
+        if (parsed.books) {
           result = parsed.books
         }
       }

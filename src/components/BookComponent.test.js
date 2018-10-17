@@ -65,7 +65,7 @@ describe('BookComponent', () => {
         it('returns books\' shelf when there is one', () => {
             expect(bookComponent.instance().calculateSelectShelf()).toEqual(Book1.shelf);
         });
-        
+
         it('returns `none` when there is no shelves', () => {
             let book = bookComponent.state().book;
             delete book.shelf;

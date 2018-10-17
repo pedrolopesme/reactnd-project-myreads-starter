@@ -17,7 +17,7 @@ class ShelvesComponent extends Component {
     loadBooks = () => {
         BooksAPI.getAll()
             .then(receivedBooks => {
-                this.setState({books: receivedBooks});
+                this.setState({ books: receivedBooks });
             });
     }
 

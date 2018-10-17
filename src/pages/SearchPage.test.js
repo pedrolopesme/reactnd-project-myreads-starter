@@ -34,7 +34,7 @@ describe('SearchPage', () => {
         });
 
         it('hides the searched term when it does not exist', () => {
-            wrapper.setState({term: ""})    
+            wrapper.setState({ term: "" })
             expect(wrapper.find('.searched-term').exists()).toBe(false);
         });
     });
@@ -43,7 +43,7 @@ describe('SearchPage', () => {
         const evt = { target: { value: "new-value" } };
         let mockedSearch;
 
-        beforeEach(() => {    
+        beforeEach(() => {
             mockedSearch = jest.fn();
             wrapper.instance().seachTerm = mockedSearch;
         });
@@ -66,7 +66,7 @@ describe('SearchPage', () => {
 
         beforeEach(() => {
             fetch.mockResponseOnce(JSON.stringify(books))
-            wrapper.setState({ term: "some term"});
+            wrapper.setState({ term: "some term" });
         });
 
         it('calls books api', () => {
